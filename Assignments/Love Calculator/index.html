@@ -1,0 +1,91 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style='background-color: lightcoral;'>
+   <div>
+    <img src="/Love Calculator/LOVE calc.1.png" alt="" style="height: 90px; margin-left: 50px;"><br><br><br>
+    <input type="text" placeholder="Your name">
+    <img src="/Love Calculator/Heart.png" alt="" style="height: 50px;">
+   </div>
+    
+<script>
+
+</script> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .container {
+            width: 300px;
+            margin: 0 auto;
+        }
+        input {
+            padding: 10px;
+            margin: 10px;
+            width: calc(100% - 22px);
+        }
+        button {
+            padding: 10px;
+            background-color: #f76c6c;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #f76c6c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Love Calculator</h1>
+        <input type="text" id="name1" placeholder="Your Name">
+        <input type="text" id="name2" placeholder="Partner's Name">
+        <button onclick="calculateLove()">Calculate Love</button>
+        <h2 id="result"></h2>
+    </div>
+
+    <script>
+        function calculateLove() {
+            // Get the names from the input fields
+            const name1 = document.getElementById('name1').value.toLowerCase();
+            const name2 = document.getElementById('name2').value.toLowerCase();
+
+            // Combine names and count character frequency
+            const combinedNames = name1 + name2;
+            const charCount = {};
+            for (const char of combinedNames) {
+                if (char >= 'a' && char <= 'z') {
+                    charCount[char] = (charCount[char] || 0) + 1;
+                }
+            }
+
+            // Calculate a simple love score based on character count
+            let loveScore = 0;
+            for (const count of Object.values(charCount)) {
+                loveScore += count;
+            }
+
+            // Create a percentage from the total number of characters
+            loveScore = loveScore % 100;
+
+            // Display the result
+            document.getElementById('result').innerText = `Your love score is ${loveScore}%`;
+        }
+    </script>
+
+</body>
+</html>

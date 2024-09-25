@@ -1,0 +1,16 @@
+{
+    "liveServer.settings.port": 5501,
+    "json.format.enable": true,
+    "json.schemas": [
+           
+
+        
+    ]
+
+
+    ,
+
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.fontFamily": "'Fira Code', Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontLigatures": true,
+}

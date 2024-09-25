@@ -1,0 +1,3 @@
+API= Application programming Interface............ It (serves as a link) deals with fetching from external source.
+HTTP request;
+1. GET-> you get info. directly.... 2.  N:B Use Thunder Client to test your API first before using it

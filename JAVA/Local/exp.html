@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Music collection</h1>
+    <input type="text" placeholder="Music Name" id="Name">
+    <input type="text" placeholder="Artist" id="Singer">
+    <button onclick="addMusic()">Add Music</button>
+
+    <script>
+        var newMusic = []
+        function addMusic(){
+            var musicName = document.getElementById('Name').value
+            var Singer = document.getElementById('Singer').value
+            // console.log(musicName,Singer);
+            if(musicName === ''|| Singer ===''){
+                alert('I cannot be empty, please fillme up')
+            } else{
+                var eachMusic = {
+                    musicName,
+                    Singer
+                }
+                newMusic.push(eachMusic)
+                // console.log(newMusic);
+                document.getElementById('Name').value=''
+                document.getElementById('Singer').value=''
+                
+                localStorage.music= JSON.stringify(newMusic)
+                // localStorage.setItem('music',JSON.stringify(newMusic))
+                console.log(newMusic); 
+            }
+            
+        }
+    </script>

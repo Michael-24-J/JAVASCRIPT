@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="studs">
+    <button onclick="addStudents()">submit</button>
+    <div id="showStudents"></div>
+
+    <script>
+           var allStudents = []
+        function addStudents() {
+            if (studs.value === '') {
+                alert("I am empty oooo, fill somethings there")
+                
+            }else {
+                allStudents.push(studs.value)
+                console.log(allStudents);
+                document.getElementById('studs').value = ''
+            }
+            
+            showStudents.innerHTML = ""
+            for (i = 0; i < allStudents.length; i++) {
+                showStudents.innerHTML += `<P>${i+1}. ${allStudents[i]}</P>`
+            }
+            // document.getElementById('showStudents') === 'allStudents'
+            //         var show = document.getElementById('showStudents');
+            // show.textContent = allStudents.join(', ');
+        }
+
+        // function deleteItem(index) {
+        //     console.log(index);
+        //     var comfamu = confirm('Are you sure you want to delete?')
+        //     if(comfamu == true) {
+        //         allStudents.splice(index, 1)
+        //         showResult()
+        //     } else{
+        //         showResult()
+        //     }
+        // }
+        // function showResult(){
+        //     document.getElementById('studs').value = ''
+        //     showStudents.innerHTML = ""
+        //         for (i = 0; i < allStudents.length; i++) {
+        //             showStudents.innerHTML += `
+        //             <P>${i+1}. ${allStudents[i]}</P>
+        //             <button onclick="deleteItem(${i})">Delete</button>
+        //             <button onclick = 'deleteItem'>edit</button>
+        //             `
+        //         }
+        // }
+
+
+        function showResult() {
+    document.getElementById('studs').value = ''; // Clear the input field
+
+    // Clear the previous content of showStudents div
+    showStudents.innerHTML = '';
+
+    // Loop through allStudents array
+    for (var i = 0; i < allStudents.length; i++) {
+        // Create a <div> for each student with their name, delete button, and edit button
+        var studentDiv = document.createElement('div');
+        studentDiv.classList.add('student-item'); // Optional: Add a class for styling purposes
+
+        var studentInfo = document.createElement('p');
+        studentInfo.textContent = `${i + 1}. ${allStudents[i]}`;
+        studentDiv.appendChild(studentInfo);
+
+        var deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete';
+        deleteButton.setAttribute('onclick', `deleteItem(${i})`);
+        studentDiv.appendChild(deleteButton);
+
+        var editButton = document.createElement('button');
+        editButton.textContent = 'Edit'; // You can handle edit functionality separately
+        editButton.setAttribute('onclick', `editItem(${i})`);
+        studentDiv.appendChild(editButton);
+
+        // Append the student <div> to showStudents div
+        showStudents.appendChild(studentDiv);
+    }
+}
+
+    </script>
+</body>
+</html>

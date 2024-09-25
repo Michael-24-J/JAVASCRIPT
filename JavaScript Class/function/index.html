@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" placeholder="Input the score.value" id="score.value">
+    <button onclick="checkscore() ">Check</button>
+    <div id="showResult">Result will show here</div>
+
+
+
+    <script>
+
+        var song = new Audio('')
+        function checkscore() {
+            console.log(showResult.innerHTML);
+            console.log(score.value); 
+        if (score.value >= 0 && score.value < 40) {
+            console.log('F9');
+            showResult.innerHTML = 'F9'
+            song.play()
+        }
+
+        else if (score.value >=40 && score.value < 45) {
+            console.log('E8');
+            showResult.innerHTML = 'E8'
+        }
+
+        else if (score.value >=45 && score.value < 50) {
+            console.log('D7');
+            showResult.innerHTML = 'D7'
+        }
+
+        else if (score.value >= 50 && score.value < 55) {
+            console.log('C6');
+            showResult.innerHTML = 'C6'
+        }
+
+        else if (score.value >=55 && score.value <60) {
+            console.log('C5');
+             showResult.innerHTML = 'C5'
+        }
+
+        else if (score.value >= 60 && score.value < 65) {
+            console.log('C4');
+             showResult.innerHTML = 'C4'
+        }
+
+        else if (score.value >= 65 && score.value < 70) {
+            console.log('B3');
+             showResult.innerHTML = 'B3'
+        }
+
+        else if (score.value >= 70 && score.value < 80) {
+            console.log('B2');
+             showResult.innerHTML = 'B2'
+        }
+
+        else if (score.value >= 80 && score.value <=100) {
+            console.log('A1');
+             showResult.innerHTML = 'A1'
+        }
+
+        else {
+            console.log('invalid');
+        }
+        }
+    </script>
+</body>
+</html>

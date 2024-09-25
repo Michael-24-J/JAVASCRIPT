@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="Name" id="nameOfStudent">
+    <input type="text" placeholder="Age" id="ageOfStudent">
+    <input type="text" placeholder="Score" id="scoreOfStudent"><br>
+    <button onclick="submitM()">Add male student</button><br>
+    <button onclick="submitF()">Add female student</button>
+    
+    <script>
+        var students=[]
+        function submitF(){
+            var one = nameOfStudent.value
+            var two = ageOfStudent.value
+            var three = scoreOfStudent.value
+
+            var newStudent = new Fstudents(one,two,three)
+            students.push(newStudent)
+            console.log(students);
+            
+        }
+        // submitF =()=>{
+        //     var one= nameOfStudent.value
+        //     var two= ageOfStudent.value
+        //     var three= scoreOfStudent.value
+
+        //     var newStudent=new Fstudents(one,two,three)
+        //     students.push(newStudent)
+        //     console.log(students);
+            
+        // }
+        submitM =()=>{
+            var one= nameOfStudent.value
+            var two = ageOfStudent.value
+            var three=scoreOfStudent.value
+
+            var newStudent=new Fstudents(one,two,three)
+            students.push(newStudent)
+            console.log(students);
+            
+        }
+        class Student{
+            constructor(name,age){
+                this.name=name;
+                this.age=age;
+            }
+            shoutOut=()=>{
+                console.log(`${this.name} is a good student and age is${this.age}`);
+                
+            }
+        }
+        const student1=new Student('Michael',80)
+        const student2=new Student('Dotun',43)
+        student1.shoutOut()
+        student2.shoutOut()
+        console.log(student1);
+        console.log(student2);
+
+        class Fstudents extends Student{
+            constructor(name,age,score){
+                super(name,age,score)
+                this.score=score
+            }
+            sendNotice=()=>{
+                console.log(`${this.name} is a female student and she is${this.age}years old and she has score of ${this.score}`);
+                
+            }
+        }
+        const student3 = new Fstudents('Fisayo', 50,90)
+        console.log(student3);
+        student3.shoutOut()
+        
+        
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+}
+
+.player {
+    text-align: center;
+}
+
+.controls {
+    margin-top: 10px;
+}
+
+button {
+    margin: 5px;
+    padding: 10px;
+    font-size: 16px;
+}

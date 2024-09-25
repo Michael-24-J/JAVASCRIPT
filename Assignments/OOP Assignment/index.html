@@ -1,0 +1,337 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOP</title>
+
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details</title>
+    <style>
+        table, th, td {
+            border: 2px solid black;
+            border-collapse: collapse;
+        }
+        table {
+            width: 40%;
+            margin: 20px;
+            position: absolute;
+        }
+        th, td {
+            padding: 20px;
+            text-align: center; /* Center text in table cells */
+        }
+        div{
+            box-shadow: 2px 2px 6px 2px grey;
+            margin-top: 40px;
+        }
+        input{
+            padding: 5px;
+            border-radius: 3px;
+        }
+        .e{
+            margin-left: 700px;
+        }
+       
+    </style>
+</head>
+<body style="background-color: pink;">
+
+    <div>
+        <h3 style="text-align: center;">Enter the details of the new student below</h3>
+        <input type="text" placeholder="Name" id="nameOfStudent"><br><br>
+        <input type="text" placeholder="Age" id="ageOfStudent"><br><br>
+        <input type="text" placeholder="Status" id="statusOfStudent"><br><br>
+        <input type="text" placeholder="Level" id="levelOfStudent"><br><br>
+        <button style="padding: 10px; background-color: cadetblue; border-radius: 20px; margin-left: 100px; margin-top: 50px;" onclick="addNewStudent('Male')">Add new male students</button>
+        <button style="padding: 10px; background-color: cadetblue; border-radius: 20px; margin-left: 100px;" onclick="addNewStuds('Female')">Add new female students</button></div>
+
+   <table id="studentTable">
+    <h4>Male Students</h4>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Status</th>
+            <th>Level</th>
+        </tr>
+    </table>
+    <table class="e">
+        <h4 style="margin-left: 700px; margin-top: -40px
+        ;" id="studstable">Female Students</h4>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Status</th>
+            <th>Level</th>
+        </tr>
+    </table>
+   
+
+   <script>
+       class Student {
+           constructor(name, age, status, level) {
+               this.name = name;
+               this.age = age;
+               this.status = status;
+               this.level = level;
+           }
+       } class studs{
+        constructor(name,age,status,level){
+            this.name = name;
+               this.age = age;
+               this.status = status;
+               this.level = level;
+        }
+       }
+
+       const studentTable = document.getElementById('studentTable');
+       const studsTable = document.getElementById('studstable')
+
+       function addNewStudent(gender) {
+           // Get the values from the input fields
+           const name = document.getElementById('nameOfStudent').value;
+           const age = document.getElementById('ageOfStudent').value;
+           const status = document.getElementById('statusOfStudent').value;
+           const level = document.getElementById('levelOfStudent').value;
+           if (name===''|| age===''|| status===''|| level==='') {
+            alert('Please provide your details'),
+            row='none',nameCell='none',ageCell='none',statusCell='none',levelCell='none'
+           }
+
+           // Create a new Student object
+           const newStudent = new Student(name, age, status, level);
+
+           // Create a new row and cells
+           const row = document.createElement('tr');
+           const nameCell = document.createElement('td');
+           const ageCell = document.createElement('td');
+           const statusCell = document.createElement('td');
+           const levelCell = document.createElement('td');
+
+           // Add text to the cells
+           nameCell.textContent = newStudent.name;
+           ageCell.textContent = newStudent.age;
+           statusCell.textContent = newStudent.status;
+           levelCell.textContent = newStudent.level;
+
+           // Append cells to the row
+           row.appendChild(nameCell);
+           row.appendChild(ageCell);
+           row.appendChild(statusCell);
+           row.appendChild(levelCell);
+
+           // Append row to the table
+           studentTable.appendChild(row);
+
+           // Clear input fields
+           document.getElementById('name').value = '';
+           document.getElementById('age').value = '';
+           document.getElementById('status').value = '';
+           document.getElementById('level').value = '';
+       }
+
+       // Example Students
+       const students = [
+           new Student('Big Sam', 25, 'Single', 2),
+           new Student('Bolaji', 30, 'Married', 3),
+           new Student('Alex', 23, 'Single', 2),
+        //    new Student('Seun', 27, 'Married', 3),
+        //    new Student('Eze', 28, 'Married', 3)
+       ];
+       const studs =[
+       new Student('EJ', 25, 'Single', 2),
+       ]
+
+       students.forEach(student => {
+           const row = document.createElement('tr');
+           row.innerHTML = `
+               <td>${student.name}</td>
+               <td>${student.age}</td>
+               <td>${student.status}</td>
+               <td>${student.level}</td>
+           `;
+           studentTable.appendChild(row);
+       });
+
+
+       function addNewStudent(gender) {
+           // Get the values from the input fields
+           const name = document.getElementById('nameOfStudent').value;
+           const age = document.getElementById('ageOfStudent').value;
+           const status = document.getElementById('statusOfStudent').value;
+           const level = document.getElementById('levelOfStudent').value;
+           if (name===''|| age===''|| status===''|| level==='') {
+            alert('Please provide your details'),
+            row='none',nameCell='none',ageCell='none',statusCell='none',levelCell='none'
+           }
+
+           // Create a new Student object
+           const newStudent = new Student(name, age, status, level);
+
+           // Create a new row and cells
+           const row = document.createElement('tr');
+           const nameCell = document.createElement('td');
+           const ageCell = document.createElement('td');
+           const statusCell = document.createElement('td');
+           const levelCell = document.createElement('td');
+
+           // Add text to the cells
+           nameCell.textContent = newStudent.name;
+           ageCell.textContent = newStudent.age;
+           statusCell.textContent = newStudent.status;
+           levelCell.textContent = newStudent.level;
+
+           // Append cells to the row
+           row.appendChild(nameCell);
+           row.appendChild(ageCell);
+           row.appendChild(statusCell);
+           row.appendChild(levelCell);
+
+           // Append row to the table
+           studsTable.appendChild(row);
+
+           // Clear input fields
+           document.getElementById('name').value = '';
+           document.getElementById('age').value = '';
+           document.getElementById('status').value = '';
+           document.getElementById('level').value = '';
+       }
+
+       // Example Students
+       const studs = [
+           new Student('Big Sam', 25, 'Single', 2),
+           new Student('Bolaji', 30, 'Married', 3),
+           new Student('Alex', 23, 'Single', 2),
+        //    new Student('Seun', 27, 'Married', 3),
+        //    new Student('Eze', 28, 'Married', 3)
+       ];
+       const studs =[
+       new Student('EJ', 25, 'Single', 2),
+       ]
+
+       students.forEach(student => {
+           const row = document.createElement('tr');
+           row.innerHTML = `
+               <td>${student.name}</td>
+               <td>${student.age}</td>
+               <td>${student.status}</td>
+               <td>${student.level}</td>
+           `;
+           studentTable.appendChild(row);
+       });
+
+   </script>
+
+</body>
+</html>
+
+     <style>
+    table,th,td{
+        border: 2px solid black;
+        border-collapse: collapse;
+    }
+    table{
+        width: 40%;
+        margin: auto;
+    }
+    th,td{
+        padding: 20px;
+    }
+
+    </style>
+   
+</head>
+<body style="background-color: pink;">
+
+   <table>
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Status</th>
+        <th>Level</th>
+    </tr>
+    <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+   </table>
+   <h3>Enter the details of the new students below</h3>
+   <input type="text" placeholder="Name" id="name"><br><br>
+   <input type="text" placeholder="Age" id="age"><br><br>
+   <input type="text" placeholder="Status" id="status"><br><br>
+   <input type="text" placeholder="Level" id="level"><br><br>
+   <button style="padding: 10px; background-color: cadetblue; border-radius: 20px; margin-left: 100px; margin-top: 100px;" onclick="addNewMale()">Add new male students</button>
+   <button style="padding: 10px; background-color: cadetblue; border-radius: 20px; margin-left: 100px;" onclick="addNewFemale()">Add new female students</button>
+
+   <script>
+    //  for (let i = 0; i < 5; i++) {
+    //     const students = array.length; 
+        
+    //  }
+     var students =[]
+     addNewMale =()=>{
+        var one= name.value
+        var two= age.value 
+        var three =status.value
+        var four = level.value
+     }
+
+
+     class Students{
+        constructor(name,age,status,level){
+            this.name=name;
+            this.age=age;
+            this.status=status;
+            this.level=level;
+        }
+     }
+
+     const student1= new Students('Big Sam', 25,'Single', 2)
+     const student2= new Students('Bolaji',30,'Married',3)
+     const student3= new Students('Alex',23,'Single',2)
+     const student4= new Students('Seun',27,'Married',3)
+     const student5 = new Students('Eze', 28,'Married',3)
+     console.log(student1);
+     console.log(student2);
+     
+
+    //  class Mstudents extends Students{
+    //     constructor(){}
+    //  }
+     
+   </script> -->
+    
+<!-- </body>
+</html> --> 
+  

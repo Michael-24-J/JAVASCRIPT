@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: cadetblue;">
+    <h1>Hello everyone</h1>
+    <button onclick="printPage()">print</button>
+    <button onclick="getLoca()">Get current location </button>
+
+    <script>
+        const getLoca =() => {
+            navigator.geolocation.getCurrentPosition((details) =>{
+                console.log(details.coords);
+            })
+        }
+        console.log(console);
+        console.info('Ade goes to school')
+        console.error('An error occured')
+        console.warn('This is a warning')
+        let newArray = [
+            {name:'kola', age: 434, gender:'Male'},
+            {name:'Sola', age: 434, gender:'Male'},
+            {name:'Sola', age: 434, gender:'Male'},
+
+            
+        ];
+        console.table(newArray)
+
+        let time= new Date() .toLocaleTimeString()
+        let date= new Date() .toLocaleDateString()
+        console.log(time,date);
+        console.log(window);
+        // window.location.locationbar.visible='false'
+         
+        console.log(Math);
+        let num=45.986
+        console.log(Math.round(num));
+        const rando = Math.random()*100 
+        consolelog(rando)
+    </script>
+<!-- This refers to the maximum number you can get -->
+</body>
+</html>

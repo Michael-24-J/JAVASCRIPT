@@ -1,0 +1,26 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+div{
+    border-radius: 10px;
+    margin-top: 10px;
+    background-color: rgb(18,18,18);
+}
+a{
+    position: absolute;
+}
+p{
+    position: absolute;
+    color: white;
+    margin-left: 20px;
+}
+.cc{
+    background-color: rgb(31,31,31);
+    width: 90%;
+    height: 25vh;
+    margin-left: 10px;
+    color: white;
+    text-indent: 20px;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+
+    
+    <script>
+      var lateComer = "Big Sam";
+      localStorage.setItem("student", lateComer);
+      localStorage.setItem("goodFood", "poundedYam and efo riro");
+
+      var sturbonStudent = {
+        name: "George",
+        age: 20,
+        departmental: "computer Science",
+        level: 300,
+      };
+
+      var key = "studs";
+
+      localStorage.setItem(key, JSON.stringify(sturbonStudent));
+
+      var allStudent = [
+        {
+          name: "George",
+          age: 20,
+          departmental: "computer Science",
+          level: 300,
+        },
+
+        {
+          name: "Tolu",
+          age: 20,
+          departmental: "computer Science",
+          level: 300,
+        },
+      ];
+      localStorage.setItem("allstudents", JSON.stringify(allStudent));
+    </script>
+  </body>
+</html>

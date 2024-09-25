@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love ME</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="a">
+        <img class="w-auto" src="/LOVE calc.1.png" alt="">
+        <p style="color: orangered;">Fill in the name of two lovers to see how much they are in love;</p>
+
+        <input type="text" placeholder="Your Name" id="Name1" class="form-control mx-auto in">
+        <input type="text" placeholder="Partner's Name" id="Name2" class="form-control mx-auto  out"><br><br>
+        <button onclick="calculateLove()"> Calculate Love</button>
+        <h5 class="mx-auto my-auto " id="Result"></h5>
+    </div>
+
+    <script>
+        function calculateLove(){
+            
+            const name1=document.getElementById("Name1").value
+            const name2=document.getElementById("Name2").value
+            document.getElementById("Name1").value=""
+            document.getElementById("Name2").value=""
+            let lovescore=Math.random()*100
+            lovescore=Math.round(lovescore)
+            if(name1===""||name2===""){
+                alert("Please fill in the name of the two lovers")
+            }else if(lovescore<=49){
+                Result.innerHTML=`Your lovescore is ${lovescore}% 
+                You're not compatible; Break the relationship as soon as possible
+                `;
+            }else{
+                Result.innerHTML=`Your lovescore is ${lovescore}%, You're in <b>Love<b/>   indeed`
+            }
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, th, td {
+            border: 2px solid black;
+            border-collapse: collapse;
+        }
+        table {
+            width: 40%;
+            margin: 20px;
+            position: absolute;
+        }
+        th, td {
+            padding: 20px;
+            text-align: center; /* Center text in table cells */
+        }
+        div{
+            box-shadow: 2px 2px 6px 2px grey;
+            margin-top: 40px;
+        }
+        input{
+            padding: 5px;
+            border-radius: 3px;
+        }
+        .e{
+            margin-left: 700px;
+        }
+       
+    </style>
+</head>
+<body style="background-color: pink;">
+
+    <div>
+        <h3 style="text-align: center;">Enter the details of the new student below</h3>
+        <input type="text" placeholder="Name" id="nameOfStudent"><br><br>
+        <input type="text" placeholder="Age" id="ageOfStudent"><br><br>
+        <input type="text" placeholder="Gender" id="genderOfStudent"><br><br>
+        <input type="text" placeholder="Level" id="levelOfStudent"><br><br>
+        <button style="padding: 10px; background-color: cadetblue; border-radius: 20px; margin-left: 100px; margin-top: 50px;" onclick="addNewMaleStuds()" id="MaleStudents">Add new male students</button>
+        <button style="padding: 10px; background-color: cadetblue; border-radius: 20px; margin-left: 100px;" onclick="addNewFemaleStuds()" id="FemaleStudents">Add new female students</button></div>
+
+   <table id="studentTable">
+    <h4>Male Students</h4>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Level</th>
+        </tr>
+    </table>
+    <table class="e">
+        <h4 style="margin-left: 700px; margin-top: -40px
+        ;" id="studstable">Female Students</h4>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Level</th>
+        </tr>
+</head>
+<body>
+    
+
+    <script>
+        function addNewMaleStuds(){
+            var nam=document.getElementById("nameOfStudent").value
+            var ag=document.getElementById("ageOfStudent").value
+            var gend=document.getElementById("genderOfStudent").value
+            var levl=document.getElementById("levelOfStudent").value
+            if(nam===""|| ag===""|| gend===""|| levl===""){
+                alert("Kindly provide your details")
+          document.getElementById("nameOfStudent").value="",
+    document.getElementById("ageOfStudent").value="",
+    document.getElementById("genderOfStudent").value="",
+    document.getElementById("levelOfStudent").value=""
+        }
+        else if(gend==='Female'|| gend=='female'){
+            alert('This is for Malestudents ONLY')
+            document.getElementById("nameOfStudent").value="",
+    document.getElementById("ageOfStudent").value="",
+    document.getElementById("genderOfStudent").value="",
+    document.getElementById("levelOfStudent").value=""
+        }
+        else{
+           class student{
+               constructor(name,age,gender,level){
+                   this.name=name
+                   this.age=age
+                   this.gender=gender
+                   this.level=level
+               }
+       
+           }
+           
+           let Student1=new student(
+                   name = document.getElementById("nameOfStudent").value,
+                     age= document.getElementById("ageOfStudent").value, 
+                    gender=document.getElementById("genderOfStudent").value,
+                 level=  document.getElementById("levelOfStudent").value,
+                    
+                )
+               
+               document.getElementById("nameOfStudent").value="",
+               document.getElementById("ageOfStudent").value="",
+               document.getElementById("genderOfStudent").value="",
+               document.getElementById("levelOfStudent").value=""
+           for(var studs=Student1;studs<=100;studs++){
+               console.log(studs);
+               
+            //    var maleStuds=[]
+            //    maleStuds.push(Student1)
+            //    console.log(maleStuds);
+           }
+               //    console.log(Student1)
+            
+            }
+            
+
+    }
+
+    addNewFemaleStuds=()=>{
+        var nam=document.getElementById("nameOfStudent").value
+        var ag=document.getElementById("ageOfStudent").value
+        var gend=document.getElementById("genderOfStudent").value
+        var levl=document.getElementById("levelOfStudent").value
+        if(nam===""|| ag===""|| gend===""|| levl===""){
+            alert("Kindly provide your details")
+            document.getElementById("nameOfStudent").value="",
+            document.getElementById("ageOfStudent").value="",
+            document.getElementById("genderOfStudent").value="",
+            document.getElementById("levelOfStudent").value=""
+        }
+        else if(gend==='Male'|| gend== 'male'){
+            alert('This is for Femalestudents ONLY')
+            document.getElementById("nameOfStudent").value="",
+            document.getElementById("ageOfStudent").value="",
+            document.getElementById("genderOfStudent").value="",
+            document.getElementById("levelOfStudent").value=""
+        }
+        else{
+            class student{
+                constructor(name,age,gender,level){
+                    this.name=name
+                    this.age=age
+                    this.gender=gender
+                    this.level=level
+                }
+                
+            }
+            
+        
+                    let Student1=new student(
+                name = document.getElementById("nameOfStudent").value,
+                age= document.getElementById("ageOfStudent").value, 
+                gender=document.getElementById("genderOfStudent").value,
+                level=  document.getElementById("levelOfStudent").value,
+            )
+            var femaleStuds=[{Student1}]
+            femaleStuds.push()
+            console.log(femaleStuds);
+            document.getElementById("nameOfStudent").value="", 
+            document.getElementById("ageOfStudent").value="",
+            document.getElementById("genderOfStudent").value="",
+            document.getElementById("levelOfStudent").value=""
+               
+            
+                
+       }
+
+    }
+   
+    </script>
+</body>
+</html>

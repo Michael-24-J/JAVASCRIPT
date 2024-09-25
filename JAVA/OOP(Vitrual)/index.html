@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        class Car{
+            constructor(colour,plateNumber,Model,engineNumber){
+                this.colour=colour,
+                this.plateNumber=plateNumber,
+                this.Model=Model,
+                this.engineNumber=engineNumber
+            }
+            display(){
+                console.log(`The colour of my car is ${this.colour}, the plateNumber is ${this.plateNumber} , the model is ${this.Model}`);
+                
+            }
+        }
+
+        let car1 = new Car('Red', 56545,'Camry', '46-BC2-23')
+        let car2 = new Car('Yellow', 57675,'Camry', '46-BC2-23')
+        let car3 = new Car('Gray', 5455,'Camry', '46-BC2-23')
+        let car4 = new Car('Pink', 5645,'Camry', '46-BC2-23')
+        // console.log(car1,car2,car3,car4);
+        car1.display()
+        car2.display()
+        car3.display()
+        car4.display()
+
+
+        
+    </script>
+</body>
+</html>

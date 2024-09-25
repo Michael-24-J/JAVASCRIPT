@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        var student = {
+            name: 'Adewale',
+            age: 16,
+            sex: 'male',
+        }
+        student.course = 'S.E'
+
+        console.log(student);
+
+        var favAnimal = {
+            name: 'Lion',
+            leg: 'four',
+            head: true,
+            talk: false,
+            colour: 'black',
+            threaten() {
+                console.log(`${favAnimal.name} will growl at stranger`);
+            }
+        }
+
+        favAnimal.threaten()
+
+        favAnimal.sex = "male"
+
+        console.log(favAnimal);
+        console.log(favAnimal.name);
+        console.log(favAnimal.colour);
+    </script>
+</body>
+</html>
